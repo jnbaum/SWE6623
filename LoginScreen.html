@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8"/>
+	<meta name=viewport" content-"width=device*width, initial*scale=1.0"/>
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  </head>
+  <body>
+<p><a href="file:///C:\Users\rultz\OneDrive\Desktop\MSSWE Course Info\SWE5063_Foundations DB and Web XLS Group MMO\Project_Final Deliverable\SettingsScreen.html">Settings</a>
+<p><a href="file:///C:\Users\rultz\OneDrive\Desktop\MSSWE Course Info\SWE5063_Foundations DB and Web XLS Group MMO\Project_Final Deliverable\NewUserScreen.html">New User Registration</a></p>
+<div>
+<p><a href="file:///C:\Users\rultz\OneDrive\Desktop\MSSWE Course Info\SWE5063_Foundations DB and Web XLS Group MMO\Project_Final Deliverable\LoginScreen.html">Logout</a></p>
+</div>
+  
+        <div class="panel panel-primary">
+          <div class="panel-heading text-center">
+            <h1>Money Tree: Login</h1>
+          </div>
+          <div class="panel-body">
+            <!-- link to the "login.php"-->
+            <!-- method="post" represents that PHP use it to collect data --> <!-- $_POST is a PHP super global variable which is used to collect data after submitting an HTML form-->
+            <form action="login.php" method="post">
+              
+              <div class="form-group">
+                <label>Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"    
+                />
+              </div>
+              
+
+              <div class="form-group">
+                <label>Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                
+              </div>
+
+              <input type="submit" class="btn btn-primary" />
+ 		
+  	 </form>
+          
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // Get the input values
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // Replace the following hardcoded data with your actual user database on the server
+      const validUsers = [
+        { username: "user1", password: "password1" },
+        { username: "user2", password: "password2" },
+        // Add more valid user objects as needed
+      ];
+
+      // Check if the provided credentials match any valid user
+      const user = validUsers.find((user) => user.username === username && user.password === password);
+
+      if (user) {
+        // Valid credentials, do something (e.g., redirect to a dashboard)
+        alert("Login successful!");
+        // Replace the following line with your redirection code or other actions
+        window.location.href = "BudgetScreen.html";
+      } else {
+        // Invalid credentials, show an error message
+        alert("Invalid username or password. Please try again.");
+      }
+
+      // Clear the input fields after the login attempt
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+    });
+          </div>
+                <button onclick="window.location.href = 'BudgetScreen.html';">LOGIN</button>
+                
+
+
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

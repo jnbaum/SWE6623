@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style2.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="containertwo">
+        <form action="register.php" method="post" name="myForm">
+            <input type="email" name="email" placeholder="Enter Your Email Address" id="email">
+            <input type="password" name="password" placeholder="Enter Your Password" id="password">
+            <!-- Remove the duplicate password input field -->
+            <button id="button">Register</button>
+        </form>
+    </div>
+</div>
+<script>
+    const btn = document.getElementById("button");
+
+    btn.addEventListener('click', function (event) {
+        if (document.myForm.email.value === "") {
+            alert("Please Enter Email Address");
+            event.preventDefault();
+        } else if (document.myForm.password.value === "") {
+            alert("Please Enter Password");
+            event.preventDefault();
+        } else {
+            // Form submission will happen if everything is validated
+            document.myForm.submit();
+        }
+    });
+</script>
+</body>
+</html>
